@@ -1,6 +1,6 @@
-<x-master>
-
-
+@extends('layout.master')
+@section('content')
+  
     <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
         <div class="container">   
@@ -204,5 +204,5 @@
         </div>
     </div>
     <!--blog section area end-->
-	
-</x-master>
+  
+@endsection

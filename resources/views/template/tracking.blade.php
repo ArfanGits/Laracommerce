@@ -1,4 +1,6 @@
-<x-master>
+@extends('layout.master')
+@section('content')
+    
     <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
         <div class="container">   
@@ -70,6 +72,5 @@
         </div>
     </div>
     <!--Tracking product end-->
-        
-
-</x-master>
+   
+@endsection

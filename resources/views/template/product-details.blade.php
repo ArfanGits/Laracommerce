@@ -1,4 +1,6 @@
-<x-master>
+@extends('layout.master')
+@section('content')
+    
     <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
         <div class="container">   
@@ -253,4 +255,4 @@
     </div>  
     <!--product info end-->
 
-</x-master>
+@endsection

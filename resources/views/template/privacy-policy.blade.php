@@ -1,4 +1,6 @@
-<x-master>
+@extends('layout.master')
+@section('content')
+    
     <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
         <div class="container">   
@@ -63,4 +65,5 @@
     </div>
     <!--Privacy Policy area end-->
 
-</x-master>
+
+@endsection

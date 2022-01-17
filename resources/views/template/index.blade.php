@@ -1,4 +1,6 @@
-<x-master>
+@extends('layout.master')
+@section('content')
+    
 
     <!--slider area start-->
     <section class="slider_section d-flex align-items-center" data-bgimg="assets/img/slider/slider3.jpg">
@@ -611,4 +613,5 @@
     </section>
     <!--shipping area end-->
 	
-</x-master>
+
+@endsection
