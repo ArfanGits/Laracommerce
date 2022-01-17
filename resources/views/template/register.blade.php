@@ -30,7 +30,29 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="account-content">
-                                    <form action="#">
+
+                                {!! Form::open(['url' => '/register', 'method' => 'post', 'class' => 'single-acc-field boxes']) !!}
+
+                                            {!! Form::label('name', 'Name: '); !!}
+                                            {!! Form::text('name', '', ['id' => 'name', 'placeholder' => 'Enter Your Name']); !!}
+                                        
+                                            {!! Form::label('email', 'Email: '); !!}
+                                            {!! Form::email('email', '', ['id' => 'email', 'placeholder' => 'Enter Your Email']); !!}
+                                        
+                                            {!! Form::label('password', 'Password: '); !!}
+                                            {!! Form::password('password', ['id' => 'password', 'placeholder' => 'Enter Your Password']); !!}
+                                        
+                                            {!! Form::checkbox('checkbox', '', false,['id' => 'checkbox']); !!}
+                                            {!! Form::label('checkbox', 'I am not a robot'); !!}
+
+                                            {!! Form::submit('Register Now'); !!}
+                                      
+               
+
+                                {!! Form::close() !!}
+
+                            
+                                    <!-- <form action="#">
                                         <div class="single-acc-field">
                                             <label for="name">Name</label>
                                             <input type="text" id="name" placeholder="Enter Your Name">
@@ -51,7 +73,7 @@
                                             <button type="submit">Register now</button>
                                         </div>
                                         <a href="login.html">Already account? Login</a>
-                                    </form>
+                                    </form> -->
                                 </div>
                             </div>
                         </div>
