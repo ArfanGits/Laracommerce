@@ -14,7 +14,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('sliders.index');
+        $sliders = Slider::all();
+        return view('sliders.index',compact('sliders'));
     }
 
     /**
@@ -35,7 +36,8 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Slider::create($request->all());
+        return redirect()->route('sliders.index');
     }
 
     /**
@@ -78,8 +80,9 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider)
+    public function destroy($id)
     {
-        //
+        Slider::where('id',$id)->delete();
+        dd('success');
     }
 }
