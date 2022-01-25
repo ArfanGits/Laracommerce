@@ -4,10 +4,11 @@
 <div class="card">
     <div class="card-header">
         <div class="card-title">create slider</div>
-        <a href="{{route('sliders.index')}}" class="btn btn-sm btn btn-info">List</a>
+        <a href="{{route('sliders.index')}}" class="btn btn-sm btn btn-info">Index</a>
     </div>
     <div class="card-body">
         <form action="{{route('sliders.store')}}" method="POST">
+            @csrf
             <div class="form-group">
                 <label class="col-md-10 control-label">Title</label>
                 <div class="col-md-8">

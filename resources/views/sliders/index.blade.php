@@ -4,13 +4,13 @@
 <div class="card">
     <div class="card-header">
         <div class="card-title"> Slider List</div>
-        <a href="{{route('sliders.create')}}" class="btn btn-sm btn btn-info"></a>
+        <a href="{{route('sliders.create')}}" class="btn btn-sm btn btn-info">Create</a>
     </div>
     <div class="card-body">
-        <table class="table-stripped">
+        <table class="table table-stripped">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Title</th>
                     <th>Subtitle</th>
                     <th>Price</th>
@@ -19,14 +19,24 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($sliders as $slider)
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td scope="row">{{$loop->iteration}}</td>
+                    <td>{{$slider->title}}</td>
+                    <td>{{$slider->subtitle}}</td>
+                    <td>{{$slider->price}}</td>
+                    <td>{{$slider->image}}</td>
+                    <td>
+                        <a href="{{route('sliders.edit',$slider->id)}}" 
+                            class="btn btn-info">Edit</a>|
+                            {{-- <button type="button" class="btn btn-danger">Left</button> --}}
+                        <form action="{{route('sliders.destroy',$slider->id)}}" method="post">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure want to delete?')"
+                            >Delete</button>
+                        </form>
+                    </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
