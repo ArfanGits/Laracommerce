@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 25, 2022 at 11:19 AM
+-- Generation Time: Jan 26, 2022 at 06:54 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -193,7 +193,7 @@ CREATE TABLE `sliders` (
   `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -204,8 +204,10 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `title`, `subtitle`, `price`, `link`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Sample', 'New', '150', 'link.com', 'deal-4.jpg', 1, '2022-01-25 04:23:17', '2022-01-25 04:23:17'),
-(2, 'Sample2', 'Test2', '550', 'bitm.com', 'deal-5.jpg', 1, '2022-01-25 04:23:53', '2022-01-25 04:23:53');
+(2, 'arfan', 'Test2', '550', 'bitm.com', 'item5.jpg', 1, '2022-01-25 04:23:53', '2022-01-25 23:13:58'),
+(3, 'AI', 'NLP', '500', 'ai.com', 'deal-4.jpg', 2, '2022-01-25 21:23:01', '2022-01-25 21:23:01'),
+(4, 'Ashraf', 'Setup bhai', '1000', 'ashraf.com', 'men1.jpg', 1, '2022-01-25 21:40:27', '2022-01-25 21:40:27'),
+(5, 'Changed', 'Test', '550', 'bitm.com', NULL, 1, '2022-01-25 22:43:26', '2022-01-25 23:11:38');
 
 -- --------------------------------------------------------
 
@@ -322,7 +324,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
