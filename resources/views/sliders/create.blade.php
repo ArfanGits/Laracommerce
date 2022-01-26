@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        <div class="card-title">create slider</div>
+        <div class="card-title">Create slider</div>
         <a href="{{route('sliders.index')}}" class="btn btn-sm btn btn-info">Index</a>
     </div>
     <div class="card-body">

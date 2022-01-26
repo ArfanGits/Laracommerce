@@ -29,8 +29,12 @@
                     <td>
                         <a href="{{route('sliders.edit',$slider->id)}}" 
                             class="btn btn-info">Edit</a>|
+                        <a href="{{route('sliders.show',$slider->id)}}" 
+                                class="btn btn-success">Show</a>|
                             {{-- <button type="button" class="btn btn-danger">Left</button> --}}
                         <form action="{{route('sliders.destroy',$slider->id)}}" method="post">
+                            @csrf
+                            @method(' DELETE')
                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure want to delete?')"
                             >Delete</button>
                         </form>
