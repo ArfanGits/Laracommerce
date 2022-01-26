@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Slider;
+use Exception;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
@@ -48,7 +49,7 @@ class SliderController extends Controller
      */
     public function show(Slider $slider)
     {
-        //
+        return view('sliders.show',compact('slider'));
     }
 
     /**
@@ -57,9 +58,10 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slider $slider)
+    public function edit($id)
     {
-        //
+        $slider = Slider::where('id',$id)->first();
+        return view('sliders.edit',compact('slider'));
     }
 
     /**
@@ -70,8 +72,14 @@ class SliderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Slider $slider)
-    {
-        //
+    { 
+        try{
+            $slider->update($request->all());
+            $slider->fill($request->all())->save();
+            return redirect()->route('sliders.index');
+        }catch(Exception $th){
+            dd($th->getMessage());
+        }
     }
 
     /**
