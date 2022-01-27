@@ -16,6 +16,14 @@ use App\Http\Controllers\SliderController;
 
 Route::resource('sliders',SliderController::class);
 
+Route::get('/home', function () {
+    return view('backend.home');
+});
+
+Route::get('/table', function () {
+    return view('backend.table');
+});
+
 // Route::get('/', function () {
 //     return view('template.index');
 // });
